@@ -23,7 +23,7 @@ app.use(router);
 app.use('/api/files', filesRoute);
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('home')
 })
 
 app.get('/login', (req, res) => {
