@@ -1,3 +1,6 @@
+require('dotenv').config();
+API_URL = process.env.API_URL;
+
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main > section');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //     console.log(key, value);
             // }
             try {
-                const response = await fetch('https://dinosaur-keen-bengal.ngrok-free.app/api/files', {
+                const response = await fetch(`${API_URL}/api/files`, {
                     method: 'POST',
                     redirect: 'follow',
                     body: formUploadData
@@ -57,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formUploadData.append('username', username);
             formUploadData.append('password', password);
             try {
-                const response = await fetch('https://dinosaur-keen-bengal.ngrok-free.app/auth/login', {
+                const response = await fetch(`${API_URL}/auth/login`, {
                     method: 'POST',
                     redirect: 'follow',
                     body: formUploadData
@@ -68,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // alert(response)
 
                 } else {
-                    window.location.href = 'https://dinosaur-keen-bengal.ngrok-free.app';
+                    window.location.href = `${API_URL}`;
                 }
             } catch (err) {
                 console.log('ERROR SOMEWHER :', err)
@@ -86,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formUploadData.append('username', username);
             formUploadData.append('password', password);
             try {
-                const response = await fetch('https://dinosaur-keen-bengal.ngrok-free.app/auth/signup', {
+                const response = await fetch(`${API_URL}/auth/signup`, {
                     method: 'POST',
                     redirect: 'follow',
                     body: formUploadData
@@ -96,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // alert('File uploaded successfully!')
                     // alert(response)
                 } else {
-                    window.location.href = 'https://dinosaur-keen-bengal.ngrok-free.app';
+                    window.location.href = `${API_URL}`;
                 }
             } catch (err) {
                 console.log('ERROR SOMEWHER :', err)
@@ -112,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(searchTerm);
             // alert(`Searching for: ${searchTerm}`);
             // const query = document.getElementById('search-button');
-            window.location.href = 'https://dinosaur-keen-bengal.ngrok-free.app/browse?q='+searchTerm;
+            window.location.href = `${API_URL}/browse?q=`+searchTerm;
 
         });
     }
