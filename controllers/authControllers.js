@@ -1,13 +1,14 @@
 const user = require('../models/user');
 const jwt = require('jsonwebtoken');
 
-module.exports.login=async function login(){
+module.exports.login=async function login(req,res){
     var name = req.body.username;
     var password = req.body.password;
     const loggingUser= await user.find({ 'name': name, 'password':password }).exec();
     console.log(loggingUser)
     if (loggingUser.length == 0) {
-        res.status(403).send((await user.exists({ "name": name })) ? "Password Incorrect" : "User Doesn't Exists")
+        res.status(403).send((await user.exists({ "name": name })) ? "Password Incorrect" : "User Doesn't Exists");
+        return;
     }
     else {
         console.log({name,password})
@@ -19,7 +20,7 @@ module.exports.login=async function login(){
     }
 }
 
-module.exports.signup=async function signup(){
+module.exports.signup=async function signup(req,res){
     var username = req.body.username;
     var password = req.body.password;
     console.log(req.body)
@@ -41,7 +42,7 @@ module.exports.signup=async function signup(){
     }
 }
 
-module.exports.logout=function logout(){
+module.exports.logout=function logout(req,res){
     res.cookie('X-Auth-Token', '', { maxAge: 1 });
     res.redirect('/')
 }
