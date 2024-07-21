@@ -154,6 +154,33 @@
                 </div>
                 <button type="submit" class="submit-btn">Login</button>
             </form>
+        </section>    
+        <section id="Sign up" class="hidden">
+            <h2>"join us,sign up!"</h2>
+            <form id="signup-form">
+             
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required><br><br>
+                <input type="submit" value="Sign up">
+            </forrm>
+            <p>Forget password? <a href="#" id="forget-password-link">Click here</a></p>
+            <form id="forget-password-form" style="display: none;">
+              <h2>Forget Password</h2>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required><br><br>
+             <input type="submit" value="Send Reset Link">
+           </form>
+           <script>
+                document.getElementById('forget-password-link').addEventListener('click', function() {
+                document.getElementById('forget-password-form').style.display = 'block';
+           });
+          </script>    
         </section>
     </main>
 
