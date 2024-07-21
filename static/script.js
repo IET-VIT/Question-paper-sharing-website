@@ -1,4 +1,4 @@
-const APIURL = 'https://dinosaur-keen-bengal.ngrok-free.app';
+const APIURL = 'https://question_paper_sharing_website.ngrok-free.app';
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main > section');
     const navLinks = document.querySelectorAll('.nav-links a');
