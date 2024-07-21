@@ -45,7 +45,8 @@ Create a pull request on GitHub.
 If you have any questions or need further information, please feel free to contact us:
 
 Email: ExamPaperHub@gmail.com
-Phone: (+69) 456-7890
+Phone: +91 7856051758
+
 Follow us on social media:
 
 - Facebook
