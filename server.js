@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
 const File = require('./models/file');
-const connectDB = require('./config/db');
+const connectDB = require('./helpers/db');
 const cors = require('cors')
 const filesRoute = require('./routes/files'); // Import the router
 const cookieparser = require('cookie-parser');
-const {router,authverify} = require('./routes/authRoutes'); // Import the router
+const { router } = require('./routes/authRoutes'); // Import the router
+const { authverify } = require('./middleware/authMiddleware');
 const Fuse = require('fuse.js');
-// const ejsLint = require('ejs-lint');
 // Connect to the database
 connectDB();
 
@@ -66,10 +66,6 @@ app.get('/browse', async (req, res) => {
     // res.end()
     res.render('browse', { result })
 })
-
-// app.get('/', (req, res) => {
-//     res.render('home')
-// })
 
 
 
