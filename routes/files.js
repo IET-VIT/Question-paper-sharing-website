@@ -7,6 +7,8 @@ const { authverify } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
+const APIURL = 'https://express-vercel-test.onrender.com/';
+
 let storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'uploads/'),
     filename: (req, file, cb) => {
@@ -45,7 +47,7 @@ router.post('/', authverify,(req, res) => {
         });
 
         file.save().then((response) => {
-            return res.json({ file: `http://localhost:3000/api/files/${response.uuid}` });
+            return res.json({ file: `${APIURL}/api/files/${response.uuid}` });
         }).catch(error => {
             console.log(error)
             return res.status(500).send({ error: error.message });

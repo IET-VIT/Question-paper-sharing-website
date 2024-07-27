@@ -1,4 +1,5 @@
-const APIURL = 'https://question_paper_sharing_website.ngrok-free.app';
+const APIURL = 'https://express-vercel-test.onrender.com/';
+
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main > section');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert('File uploaded failed!')
                 }
             } catch (err) {
-                console.log('ERROR SOMEWHER :', err)
+                console.log('ERROR SOMEWHERE :', err)
             }
 
             // alert('File uploaded successfully!');
@@ -64,19 +65,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     body: formUploadData
                 });
                 if (!response.ok) {
-                    alert(response.body)
+                    alert(`Invalid credentials ${response.body}`)
                     // alert('File uploaded successfully!')
                     // alert(response)https://dinosaur-keen-bengal.ngrok-free.app
-
                 } else {
                     window.location.href = APIURL;
                 }
             } catch (err) {
-                console.log('ERROR SOMEWHER :', err)
+                console.log('ERROR SOMEWHERE :', err)
             }
         });
     }
-
+    
     const signupForm = document.getElementById('signup-form');
     if (signupForm) {
         signupForm.addEventListener('submit', async function (e) {
@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     body: formUploadData
                 });
                 if (!response.ok) {
-                    alert(response.body)
+                    alert(`Invalid credentials ${response.body}`)
                     // alert('File uploaded successfully!')
                     // alert(response)
                 } else {
                     window.location.href = APIURL;
                 }
             } catch (err) {
-                console.log('ERROR SOMEWHER :', err)
+                console.log('ERROR SOMEWHERE :', err)
             }
         });
     }
@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
 
     if (window.location.href.startsWith(APIURL+'/browse?q=')) {
-        console.log('hiiii')
         document.getElementById('search-input').value = decodeURIComponent(window.location.href).slice(53)
     }
 

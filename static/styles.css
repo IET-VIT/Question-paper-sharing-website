@@ -61,20 +61,19 @@ nav {
     color: var(--light-text-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    margin: 20px;
 }
 
 .nav-links li a:hover {
     color: var(--secondary-color);
 }
 
-#login-link {
-    margin-right: 20px;
-}
 
 main {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     max-width: 1200px;
     margin: 80px auto 0;
     padding: 2rem;
@@ -120,6 +119,10 @@ button {
 
 button:hover {
     background-color: var(--secondary-color);
+}
+
+#browse {
+    width: 95%;
 }
 
 .paper-list {
@@ -174,6 +177,7 @@ button:hover {
 }
 
 #home {
+    width: 95%;
     text-align: center;
     padding: 4rem 2rem;
 }
@@ -216,6 +220,10 @@ button:hover {
     background-color: var(--secondary-color);
 }
 
+#upload {
+    width: 95%;
+}
+
 #upload-form {
     max-width: 600px;
     margin: 0 auto;
@@ -256,6 +264,7 @@ button:hover {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-left: 20px;
 }
 
 .submit-btn:hover {
@@ -295,6 +304,11 @@ footer {
 
 .footer-section a {
     color: var(--light-text-color);
+    text-decoration: none;
+}
+
+.LinkedIn-account li a{
+    color : #f2faff;
     text-decoration: none;
 }
 
