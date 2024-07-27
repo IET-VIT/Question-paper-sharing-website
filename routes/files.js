@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const File = require('../models/file');
 const { v4: uuidv4 } = require('uuid');
-const { authverify } = require('./authRoutes');
+const { authverify } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
@@ -63,4 +63,4 @@ router.get('/', async (req, res) => {
     res.end()
 })
 
-module.exports = router;
+module.exports.filesRoute = router;

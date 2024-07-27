@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const file = require('../models/file');
 
 function connectDB() {
     // Database connection 🥳
