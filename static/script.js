@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
 
     if (window.location.href.startsWith(APIURL+'/browse?q=')) {
-        document.getElementById('search-input').value = decodeURIComponent(window.location.href).slice(53)
+        document.getElementById('search-input').value = decodeURIComponent(window.location.href).slice(61)
     }
 
     if (searchButton && searchInput) {
