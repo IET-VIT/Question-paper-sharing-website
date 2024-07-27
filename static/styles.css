@@ -68,12 +68,7 @@ nav {
     color: var(--secondary-color);
 }
 
-
 main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     max-width: 1200px;
     margin: 80px auto 0;
     padding: 2rem;
@@ -325,7 +320,6 @@ footer {
 @media screen and (max-width: 768px) {
     .menu-btn {
         display: block;
-        margin-right: 30px;
     }
 
     .nav-links {
@@ -369,11 +363,8 @@ footer {
 }
 
 #login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
+    margin-left: 300px;
+    margin-right: 300px;
     padding: 30px 90px 60px 90px;
 }
 
