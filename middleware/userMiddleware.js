@@ -1,28 +1,31 @@
 const jwt = require('jsonwebtoken');
 
-function authverify(req, res, next) {
+function userverify(req, res, next) {
     var incomimg_token = req.cookies;
     console.log(incomimg_token);
     if (!incomimg_token) {
         // res.status(400).send("No token");
-        res.redirect("/signup");
+        // res.redirect("/signup");
+        next();
+        return;  
     }
-    if (!incomimg_token['X-Auth-Token']) {
-        res.redirect("/login");
+    else if (!incomimg_token['X-Auth-Token']) {
+        next();
+        return;
     }
     // console.log(incomimg_token);/
-    jwt.verify(incomimg_token['X-Auth-Token'], 'This is supposed to be secret , made with <3 by tba', (err, decodedtoken) => {
+    else{jwt.verify(incomimg_token['X-Auth-Token'], 'This is supposed to be secret , made with <3 by tba', (err, decodedtoken) => {
         if (err) {
             // console.log(err);
-            res.redirect("/login");
+            // res.redirect("/login");
         }
         else {
             console.log(decodedtoken);
             res.locals.user = decodedtoken;
             console.log(res);//auth->locals->user
-            next();
-        }
-    });
+        }})
+    };
+    next();
 }
 
-module.exports.authverify = authverify;
+module.exports.userverify = userverify;

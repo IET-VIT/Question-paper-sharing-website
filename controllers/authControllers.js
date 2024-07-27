@@ -35,7 +35,7 @@ module.exports.signup=async function signup(req,res){
             var token = jwt.sign({ user_id }, 'This is supposed to be secret , made with <3 by tba', { expiresIn: '180d' });
             res.cookie('X-Auth-Token', token , {maxAge: 86400000});
             // res.status(201).json({ token, usr });
-            // res.redirect('/login');
+            res.redirect('/');
         } catch (err) {
             res.status(500).send(err.message);
         }

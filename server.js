@@ -3,7 +3,8 @@ const app = express();
 const File = require('./models/file');
 const connectDB = require('./helpers/db');
 const cors = require('cors')
-const {filesRoute} = require('./routes/files'); // Import the router
+const { filesRoute } = require('./routes/files'); // Import the router
+const { userverify } = require('./middleware/userMiddleware');
 const cookieparser = require('cookie-parser');
 const { router } = require('./routes/authRoutes'); // Import the router
 const { authverify } = require('./middleware/authMiddleware');
@@ -21,6 +22,8 @@ app.use(cookieparser())
 app.set('view engine', 'ejs');
 // Use the files route
 app.use(router);
+// app.user(userverify)
+app.get("*",userverify)
 app.use('/api/files', filesRoute);
 
 app.get('/', (req, res) => {
