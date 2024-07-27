@@ -1,4 +1,4 @@
-const APIURL = 'https://express-vercel-test.onrender.com/';
+const APIURL = 'https://question-paper-sharing-website.onrender.com';
 
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main > section');

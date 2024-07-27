@@ -7,7 +7,7 @@ const { authverify } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 
-const APIURL = 'https://express-vercel-test.onrender.com/';
+const APIURL = 'https://question-paper-sharing-website.onrender.com';
 
 let storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'uploads/'),
