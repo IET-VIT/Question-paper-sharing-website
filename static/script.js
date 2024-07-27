@@ -1,4 +1,4 @@
-const APIURL = 'https://question-paper-sharing-website.onrender.com';
+const APIURL = 'https://localhost:3000';
 
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main > section');
