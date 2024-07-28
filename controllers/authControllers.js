@@ -13,7 +13,8 @@ module.exports.login=async function login(req,res){
     else {
         console.log({name,password})
     var user_id = loggingUser._id;
-    var token = jwt.sign({ user_id }, 'This is supposed to be secret , made with <3 by tba', { expiresIn: '180d' });
+        var token = jwt.sign({ user_id: user_id }, 'This is supposed to be secret , made with <3 by tba', { expiresIn: '180d' });
+        console.log(jwt.verify(token, 'This is supposed to be secret , made with <3 by tba'));
     res.cookie('X-Auth-Token', token, { maxAge: 86400000 });
         // res.redirect('/');
         res.status(200).end();

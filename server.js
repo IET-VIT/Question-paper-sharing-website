@@ -26,7 +26,7 @@ app.use(router);
 app.get("*",userverify)
 app.use('/api/files', filesRoute);
 
-app.get('/', (req, res) => {
+app.get('/', userverify,(req, res) => {
     res.render('home')
 })
 
